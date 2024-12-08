@@ -5,12 +5,14 @@ def createFrame(goodNames):
     print(firstLastLine)
     for name in goodNames:
         nameString = f"* {name}{' ' * (longestName - len(name))} *"
-        print(nameString)    
+        print(nameString)
     print(firstLastLine)
 
-userInput = input("Enter child names separated by commas (e.g., John, May, Tim, Tommy): ")
+
+userInput = input(
+    "Enter child names separated by commas (e.g., John, May, Tim, Tommy): ")
 # put the names into the lists
-if userInput.strip(): #ensure no data is entered
+if userInput.strip():  # ensure no data is entered
     kidsNames = [x.strip() for x in userInput.split(',')]
     createFrame(kidsNames)
 else:
