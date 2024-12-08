@@ -25,9 +25,8 @@ treeSymbol = input(
 treeHeight = int(height)
 if (type(treeHeight) == int and (treeHeight > 1 and treeHeight <= 100) and treeSymbol.strip()):
     xmasTree = createXmasTree(treeHeight, treeSymbol[0])
-    f = open("./Day4/output.txt", "w")
-    f.write(xmasTree)
-    f.close()
+    with open("./Day4/output.txt", "w") as f:
+        f.write(xmasTree)
     print("Check the file, Xmas tree is waiting for you!!!")
 else:
     print(
