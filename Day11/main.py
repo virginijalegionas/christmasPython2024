@@ -2,10 +2,10 @@ import re
 
 
 def decodeFilename(filename):
-    pattern = r"\_([^.])*\.(\w{3})"
-    match = re.search(pattern, filename)
-    if match:
-        return filename[match.start()+1:match.end()]
+    pattern = r"\d*\_(.*)[\.].*"
+    match22222 = re.match(pattern, filename)
+    if match22222:
+        return match22222.group(1)
     return "nothing is decoded, empty or incorect filename was passed "
 
 
@@ -21,3 +21,7 @@ print(f"Decoded file is: {decodeFilename(
     "")}")
 print(f"Decoded file is: {decodeFilename(
     "987654321_elf-rostercsvtempfile")}")
+print(f"Decoded file is: {decodeFilename(
+    "3_word.sqlite.work")}")
+print(f"Decoded file is: {decodeFilename(
+    "3_w dddd deee e 444 ord.sqlite.work")}")

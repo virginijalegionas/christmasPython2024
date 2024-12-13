@@ -1,11 +1,10 @@
 def moveTrain(board, mov):
     # first get coordinates, where the train is
-    i = 0
-    isEtaFound = True
-    while isEtaFound and i < len(board):
+    i = 0    
+    while i < len(board):
         if "@" in board[i]:
             trainStart = [i, board[i].rfind("@")]
-            isEtaFound = False
+            break
         i += 1
     # calculate the coordinates where to go
     trainToGo = []
@@ -21,7 +20,7 @@ def moveTrain(board, mov):
         case _:
             return print("Wrong Command was added")
     # try to move tain by given command
-    if 0 <= trainToGo[0] < len(board) and 0 <= trainToGo[1] < len(board):
+    if 0 <= trainToGo[0] < len(board) and 0 <= trainToGo[1] < len(board[0]):
         element = board[trainToGo[0]][trainToGo[1]]
         match element:
             case ".": return "none"
