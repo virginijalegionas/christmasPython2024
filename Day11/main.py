@@ -3,9 +3,9 @@ import re
 
 def decodeFilename(filename):
     pattern = r"\d*\_(.*)[\.].*"
-    match22222 = re.match(pattern, filename)
-    if match22222:
-        return match22222.group(1)
+    match = re.match(pattern, filename)
+    if match:
+        return match.group(1)
     return "nothing is decoded, empty or incorect filename was passed "
 
 

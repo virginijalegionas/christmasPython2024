@@ -15,9 +15,8 @@ def calculatePrice(ornaments):
     # calculate price
     for i in range(0, len(ornamentPrices)):
         if i != len(ornamentPrices) - 1: # will compare all the array elements except the last one
-            if ornamentPrices[i] < ornamentPrices[i+1]: # if next element has higher value, current becomes negative
-                ornamentPrices[i] = ornamentPrices[i]*(-1)
-                price += ornamentPrices[i]
+            if ornamentPrices[i] < ornamentPrices[i+1]: # if next element has higher value, current becomes negative                
+                price -= ornamentPrices[i]
             else: # if next element is eaqul or lower, nothing is done
                 price += ornamentPrices[i]
         else:
