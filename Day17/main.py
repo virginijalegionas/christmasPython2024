@@ -1,10 +1,7 @@
-import copy
-
 def detectBombs(grid):
     height = len(grid)
     width = len(grid[0])
-    # need to have initialized array where to put bomb count
-    bombCount = copy.deepcopy(grid)
+    # need to have initialized array where to put bomb count    
     bombCount  = [[0] * len(row) for row in grid]    
     for y in range(0, height):
         for x in range(0, width):
