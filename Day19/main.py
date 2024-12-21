@@ -8,36 +8,34 @@ def distributeWeight(weight):
     }
     availableBoxes = [10, 5, 2, 1]
     boxesNeededToPack = []
-    # calculate the boxes needed for packing gift    
+    # calculate the boxes needed for packing gift
     for i in range(0, len(availableBoxes)):
         while weight >= availableBoxes[i]:
             boxesNeededToPack.append(availableBoxes[i])
-            weight -= availableBoxes[i]                
+            weight -= availableBoxes[i]
     # print packed gift
     boxesNeededToPack = boxesNeededToPack[::-1]
     thePrint = ""
-
-    for a in range(0, len(boxesNeededToPack)):        
-        currentBox = boxRepresentations[boxesNeededToPack[a]] 
-        if a == 0:
-            previousBoxWidth = 0
-        else:
-            previousBoxWidth = len(boxRepresentations[boxesNeededToPack[a - 1]][0])      
-        for b in range(0, len(currentBox)): 
+    previousBoxWidth = 0
+    for box in boxesNeededToPack:
+        currentBox = boxRepresentations[box]
+        for b in range(0, len(currentBox)):
             if b == 0:
                 if previousBoxWidth == 0:
-                    thePrint +=f"{currentBox[b]}\n"
+                    thePrint += f"{currentBox[b]}\n"
                 else:
                     cuttedString = currentBox[b].strip()
                     cuttedString = cuttedString[(previousBoxWidth-1):]
-                    thePrint +=f"{cuttedString}\n"
-            else:  
-                if b == len(currentBox) - 1: 
-                    thePrint += f"{currentBox[b]}"   
+                    thePrint += f"{cuttedString}\n"
+            else:
+                if b == len(currentBox) - 1:
+                    thePrint += f"{currentBox[b]}"
                 else:
-                    thePrint +=f"{currentBox[b]}\n"
-                
+                    thePrint += f"{currentBox[b]}\n"
+        previousBoxWidth = len(currentBox[0])
+
     return f"////{weight2}\n{thePrint}\n"
+
 
 print(distributeWeight(1))
 print(distributeWeight(2))
