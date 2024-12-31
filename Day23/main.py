@@ -1,19 +1,10 @@
-from functools import reduce
-from collections import Counter
-
-
 def findMissingNumbers(nums):
-    maxNumber = reduce(max, nums)
-    allNumbers = []
-    a = 1
-    while a <= maxNumber:
-        allNumbers.append(a)
-        a += 1
-    # Subtract arrays to get the missing numbers
-    counter1 = Counter(allNumbers)
-    counter2 = Counter(nums)
-    missingNumbers = list((counter1 - counter2).elements())
-
+    maxNumber = max(nums)
+    missingNumbers = []
+    for i in range(1, maxNumber + 1):
+        if i not in nums:
+            missingNumbers.append(i)
+    
     return missingNumbers
 
 
