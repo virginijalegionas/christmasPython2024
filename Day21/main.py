@@ -1,17 +1,17 @@
-def waklTree(current, height):
+def walkTree(current, height):
     leftHeight = 0
     rightHeight = 0
     if current["left"] != None:
-        leftHeight = waklTree(current["left"], height + 1)
+        leftHeight = walkTree(current["left"], height + 1)
     if current["right"] != None:
-        rightHeight = waklTree(current["right"], height + 1)    
+        rightHeight = walkTree(current["right"], height + 1)    
     return max([leftHeight, rightHeight, height])
 
 
 def treeHeight(tree):
     if tree == None:
         return 0    
-    height = waklTree(tree, 1)
+    height = walkTree(tree, 1)
     return height
 
 

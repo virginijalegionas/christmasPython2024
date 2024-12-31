@@ -37,7 +37,7 @@ def generateGiftSets(gifts):
     sortedByLenghtCombinations = sorted(allCombinations, key= lambda x: len(x))
     for comb in sortedByLenghtCombinations:
         print(comb)
-    return 
+
 
 generateGiftSets(['car', 'doll', 'iPad', 'puzzle', 'socks'])
 generateGiftSets(['car', 'doll', 'puzzle'])
