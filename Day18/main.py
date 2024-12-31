@@ -33,7 +33,7 @@ def findInAgenda(agenda, phone):
         print("Too many results found")
     else:
         print("No results found")
-    return
+
 
 
 agenda = '''+34-600-123-456 Calle Gran Via 12 <Juan Perez>

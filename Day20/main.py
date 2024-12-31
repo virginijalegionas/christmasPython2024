@@ -16,9 +16,7 @@ def fixGiftList(received, expected):
     for extraGift in extraGifts:
         if not extraGift in extra.keys():
             extra[extraGift] = 0
-        extra[extraGift] +=1
-
-    
+        extra[extraGift] +=1    
 
     return missing, extra
 
